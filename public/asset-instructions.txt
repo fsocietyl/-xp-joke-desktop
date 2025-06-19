@@ -1,0 +1,12 @@
+# Place the following assets in the public directory:
+
+- xp-bliss.jpg (Windows XP Bliss wallpaper or similar)
+- /icons/my-computer.png
+- /icons/my-documents.png
+- /icons/recycle-bin.png
+- /icons/network.png
+- /icons/file-big.png
+- /icons/start.png
+- /icons/xp-cursor.png (classic arrow cursor)
+- /sounds/xp-click.mp3 (Windows XP click sound)
+- /video/jumpscare.mp4 (horror jumpscare video) 
