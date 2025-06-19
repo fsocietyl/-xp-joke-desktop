@@ -142,39 +142,99 @@ Place these files in the same directory as this HTML:
     }
     @media (max-width: 600px) {
       .xp-icons {
-        top: 12px;
-        left: 8px;
-        gap: 16px;
+        top: 8px;
+        left: 4px;
+        gap: 12px;
       }
       .xp-icon {
-        width: 48px;
-        font-size: 11px;
+        width: 40px;
+        font-size: 10px;
       }
       .xp-icon img {
+        width: 28px;
+        height: 28px;
+      }
+      .xp-press-here {
+        padding: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      .xp-press-here img {
+        width: 36px;
+        height: 36px;
+      }
+      .xp-press-here-label {
+        font-size: 12px;
+      }
+      .xp-taskbar {
+        height: 28px;
+      }
+      .xp-taskbar-photo {
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+      }
+      .xp-clock {
+        font-size: 10px;
+        margin-right: 6px;
+      }
+      .jumpscare-gotcha {
+        font-size: 2.5rem;
+        bottom: 10%;
+      }
+      .jumpscare-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.8rem;
+        top: 6px;
+        right: 6px;
+      }
+    }
+    @media (max-width: 400px) {
+      .xp-icons {
+        top: 4px;
+        left: 2px;
+        gap: 8px;
+      }
+      .xp-icon {
+        width: 32px;
+        font-size: 8px;
+      }
+      .xp-icon img {
+        width: 24px;
+        height: 24px;
+      }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.7);
+      }
+      .xp-press-here img {
         width: 32px;
         height: 32px;
       }
-      .xp-press-here {
-        padding: 16px 12px;
-      }
-      .xp-press-here img {
-        width: 64px;
-        height: 64px;
-      }
-      .xp-press-here span {
-        font-size: 1.2rem;
+      .xp-press-here-label {
+        font-size: 10px;
       }
       .xp-taskbar {
-        height: 32px;
+        height: 24px;
       }
       .xp-taskbar-photo {
-        width: 24px;
-        height: 24px;
-        margin-left: 8px;
+        width: 16px;
+        height: 16px;
+        margin-left: 4px;
       }
       .xp-clock {
-        font-size: 11px;
-        margin-right: 8px;
+        font-size: 8px;
+        margin-right: 4px;
+      }
+      .jumpscare-gotcha {
+        font-size: 2rem;
+        bottom: 8%;
+      }
+      .jumpscare-close {
+        width: 28px;
+        height: 28px;
+        font-size: 1.4rem;
+        top: 4px;
+        right: 4px;
       }
     }
     .jumpscare-container {
@@ -291,17 +351,22 @@ Place these files in the same directory as this HTML:
     }
     setInterval(updateClock, 1000); updateClock();
 
-    // Play click sound on hover
+    // Play click sound on hover/touch
     const clickSound = document.getElementById('xp-click');
     document.querySelectorAll('[data-sound="1"]').forEach(el => {
       el.addEventListener('mouseenter', () => {
         clickSound.currentTime = 0;
         clickSound.play();
       });
+      // Add touch support for mobile
+      el.addEventListener('touchstart', () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
     });
 
     // Fullscreen and jumpscare logic
-    const pressHere = document.getElementById('press-here');
+    const pressHereIcon = document.querySelector('.xp-press-here-icon');
     const desktop = document.getElementById('desktop');
     const jumpscare = document.getElementById('jumpscare');
     const jumpscareVideo = document.getElementById('jumpscare-video');
@@ -313,6 +378,8 @@ Place these files in the same directory as this HTML:
       else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
       else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
       else if (el.msRequestFullscreen) el.msRequestFullscreen();
+      // For mobile browsers that don't support fullscreen
+      else if (el.webkitEnterFullscreen) el.webkitEnterFullscreen();
     }
     function exitFullscreen() {
       if (document.fullscreenElement) document.exitFullscreen();
@@ -325,10 +392,17 @@ Place these files in the same directory as this HTML:
       desktop.style.display = 'none';
       jumpscare.style.display = 'flex';
       jumpscare.classList.remove('hide');
-      enterFullscreen(document.documentElement);
+      // Try fullscreen, but don't fail if not supported
+      try {
+        enterFullscreen(document.documentElement);
+      } catch (e) {
+        console.log('Fullscreen not supported, continuing without it');
+      }
       jumpscareVideo.currentTime = 0;
       jumpscareVideo.volume = 1;
-      jumpscareVideo.play();
+      jumpscareVideo.play().catch(e => {
+        console.log('Video autoplay blocked, user must interact first');
+      });
     }
     function hideJumpscare() {
       isJumpscare = false;
@@ -337,18 +411,27 @@ Place these files in the same directory as this HTML:
         jumpscare.style.display = 'none';
         desktop.style.display = '';
         jumpscareVideo.pause();
-        exitFullscreen();
+        try {
+          exitFullscreen();
+        } catch (e) {
+          console.log('Fullscreen exit failed');
+        }
       }, 400);
     }
-    const pressHereIcon = document.querySelector('.xp-press-here-icon');
     pressHereIcon.addEventListener('click', showJumpscare);
+    // Add touch support for mobile
+    pressHereIcon.addEventListener('touchend', showJumpscare);
     jumpscareClose.addEventListener('click', hideJumpscare);
+    jumpscareClose.addEventListener('touchend', hideJumpscare);
     document.addEventListener('keydown', e => {
       if (isJumpscare && e.key === 'Escape') hideJumpscare();
     });
     // Auto-pause video if user exits fullscreen
     document.addEventListener('fullscreenchange', () => {
       if (isJumpscare && !document.fullscreenElement) hideJumpscare();
+    });
+    document.addEventListener('webkitfullscreenchange', () => {
+      if (isJumpscare && !document.webkitFullscreenElement) hideJumpscare();
     });
   </script>
 </body>
