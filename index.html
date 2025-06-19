@@ -15,7 +15,7 @@ Place these files in the same directory as this HTML:
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Windows XP Joke Desktop</title>
   <style>
     html, body {
@@ -39,28 +39,28 @@ Place these files in the same directory as this HTML:
     }
     .xp-icons {
       position: absolute;
-      top: 32px;
-      left: 32px;
+      top: 16px;
+      left: 16px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 16px;
       z-index: 2;
     }
     .xp-icon {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 72px;
+      width: 48px;
       color: #fff;
       text-shadow: 1px 1px 2px #000;
-      font-size: 14px;
+      font-size: 10px;
       cursor: pointer;
       outline: none;
       transition: filter 0.1s;
     }
     .xp-icon img {
-      width: 48px;
-      height: 48px;
+      width: 32px;
+      height: 32px;
       margin-bottom: 4px;
     }
     .xp-icon:active, .xp-icon:focus {
@@ -70,7 +70,7 @@ Place these files in the same directory as this HTML:
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0.8);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -94,12 +94,12 @@ Place these files in the same directory as this HTML:
       align-items: center;
     }
     .xp-press-here img {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       margin-bottom: 4px;
     }
     .xp-press-here-label {
-      font-size: 14px;
+      font-size: 12px;
     }
     .xp-press-here:hover, .xp-press-here:focus {
       box-shadow: 0 0 48px 16px #00f6ffcc, 0 2px 16px #000a;
@@ -110,7 +110,7 @@ Place these files in the same directory as this HTML:
       left: 0;
       bottom: 0;
       width: 100vw;
-      height: 48px;
+      height: 32px;
       background: linear-gradient(180deg, #3a6ea5 0%, #245edb 100%);
       border-top: 2px solid #fff8;
       display: flex;
@@ -119,9 +119,9 @@ Place these files in the same directory as this HTML:
       box-shadow: 0 -2px 8px #0006;
     }
     .xp-taskbar-photo {
-      margin-left: 16px;
-      width: auto;
-      height: auto;
+      margin-left: 8px;
+      width: 20px;
+      height: 20px;
       border-radius: 0;
       box-shadow: none;
       object-fit: unset;
@@ -136,14 +136,51 @@ Place these files in the same directory as this HTML:
     }
     .xp-clock {
       color: #fff;
-      font-size: 16px;
-      margin-right: 24px;
+      font-size: 10px;
+      margin-right: 8px;
       text-shadow: 1px 1px 2px #000;
     }
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       .xp-icons {
-        top: 20px;
-        left: 20px;
+        top: 32px;
+        left: 32px;
+        gap: 32px;
+      }
+      .xp-icon {
+        width: 72px;
+        font-size: 14px;
+      }
+      .xp-icon img {
+        width: 48px;
+        height: 48px;
+      }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .xp-press-here img {
+        width: 48px;
+        height: 48px;
+      }
+      .xp-press-here-label {
+        font-size: 14px;
+      }
+      .xp-taskbar {
+        height: 48px;
+      }
+      .xp-taskbar-photo {
+        width: 32px;
+        height: 32px;
+        margin-left: 16px;
+      }
+      .xp-clock {
+        font-size: 16px;
+        margin-right: 24px;
+      }
+    }
+    @media (min-width: 900px) and (max-width: 1199px) {
+      .xp-icons {
+        top: 24px;
+        left: 24px;
         gap: 24px;
       }
       .xp-icon {
@@ -154,18 +191,33 @@ Place these files in the same directory as this HTML:
         width: 40px;
         height: 40px;
       }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.9);
+      }
       .xp-press-here img {
-        width: 64px;
-        height: 64px;
+        width: 44px;
+        height: 44px;
       }
       .xp-press-here-label {
-        font-size: 16px;
+        font-size: 13px;
+      }
+      .xp-taskbar {
+        height: 40px;
+      }
+      .xp-taskbar-photo {
+        width: 28px;
+        height: 28px;
+        margin-left: 12px;
+      }
+      .xp-clock {
+        font-size: 14px;
+        margin-right: 16px;
       }
     }
-    @media (max-width: 900px) {
+    @media (min-width: 768px) and (max-width: 899px) {
       .xp-icons {
-        top: 16px;
-        left: 16px;
+        top: 20px;
+        left: 20px;
         gap: 20px;
       }
       .xp-icon {
@@ -176,30 +228,33 @@ Place these files in the same directory as this HTML:
         width: 36px;
         height: 36px;
       }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.85);
+      }
       .xp-press-here img {
-        width: 56px;
-        height: 56px;
+        width: 42px;
+        height: 42px;
       }
       .xp-press-here-label {
-        font-size: 14px;
+        font-size: 12px;
       }
       .xp-taskbar {
-        height: 40px;
+        height: 36px;
       }
       .xp-taskbar-photo {
-        width: 32px;
-        height: 32px;
-        margin-left: 12px;
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
       }
       .xp-clock {
-        font-size: 14px;
-        margin-right: 16px;
+        font-size: 12px;
+        margin-right: 12px;
       }
     }
-    @media (max-width: 768px) {
+    @media (min-width: 600px) and (max-width: 767px) {
       .xp-icons {
-        top: 12px;
-        left: 12px;
+        top: 16px;
+        left: 16px;
         gap: 16px;
       }
       .xp-icon {
@@ -209,54 +264,6 @@ Place these files in the same directory as this HTML:
       .xp-icon img {
         width: 32px;
         height: 32px;
-      }
-      .xp-press-here {
-        transform: translate(-50%, -50%) scale(0.9);
-      }
-      .xp-press-here img {
-        width: 48px;
-        height: 48px;
-      }
-      .xp-press-here-label {
-        font-size: 13px;
-      }
-      .xp-taskbar {
-        height: 36px;
-      }
-      .xp-taskbar-photo {
-        width: 28px;
-        height: 28px;
-        margin-left: 10px;
-      }
-      .xp-clock {
-        font-size: 12px;
-        margin-right: 12px;
-      }
-      .jumpscare-gotcha {
-        font-size: 3rem;
-        bottom: 15%;
-      }
-      .jumpscare-close {
-        width: 40px;
-        height: 40px;
-        font-size: 2rem;
-        top: 10px;
-        right: 10px;
-      }
-    }
-    @media (max-width: 600px) {
-      .xp-icons {
-        top: 8px;
-        left: 6px;
-        gap: 12px;
-      }
-      .xp-icon {
-        width: 36px;
-        font-size: 9px;
-      }
-      .xp-icon img {
-        width: 28px;
-        height: 28px;
       }
       .xp-press-here {
         transform: translate(-50%, -50%) scale(0.8);
@@ -272,42 +279,31 @@ Place these files in the same directory as this HTML:
         height: 32px;
       }
       .xp-taskbar-photo {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         margin-left: 8px;
       }
       .xp-clock {
         font-size: 10px;
         margin-right: 8px;
       }
-      .jumpscare-gotcha {
-        font-size: 2.5rem;
-        bottom: 12%;
-      }
-      .jumpscare-close {
-        width: 36px;
-        height: 36px;
-        font-size: 1.8rem;
-        top: 8px;
-        right: 8px;
-      }
     }
-    @media (max-width: 480px) {
+    @media (min-width: 480px) and (max-width: 599px) {
       .xp-icons {
-        top: 6px;
-        left: 4px;
-        gap: 10px;
+        top: 12px;
+        left: 12px;
+        gap: 14px;
       }
       .xp-icon {
-        width: 32px;
-        font-size: 8px;
+        width: 40px;
+        font-size: 9px;
       }
       .xp-icon img {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
       }
       .xp-press-here {
-        transform: translate(-50%, -50%) scale(0.7);
+        transform: translate(-50%, -50%) scale(0.75);
       }
       .xp-press-here img {
         width: 36px;
@@ -320,42 +316,31 @@ Place these files in the same directory as this HTML:
         height: 28px;
       }
       .xp-taskbar-photo {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         margin-left: 6px;
       }
       .xp-clock {
         font-size: 9px;
         margin-right: 6px;
       }
-      .jumpscare-gotcha {
-        font-size: 2.2rem;
-        bottom: 10%;
-      }
-      .jumpscare-close {
-        width: 32px;
-        height: 32px;
-        font-size: 1.6rem;
-        top: 6px;
-        right: 6px;
-      }
     }
-    @media (max-width: 400px) {
+    @media (min-width: 400px) and (max-width: 479px) {
       .xp-icons {
-        top: 4px;
-        left: 3px;
-        gap: 8px;
+        top: 8px;
+        left: 8px;
+        gap: 12px;
       }
       .xp-icon {
-        width: 28px;
-        font-size: 7px;
+        width: 36px;
+        font-size: 8px;
       }
       .xp-icon img {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
       }
       .xp-press-here {
-        transform: translate(-50%, -50%) scale(0.6);
+        transform: translate(-50%, -50%) scale(0.7);
       }
       .xp-press-here img {
         width: 32px;
@@ -376,34 +361,23 @@ Place these files in the same directory as this HTML:
         font-size: 8px;
         margin-right: 4px;
       }
-      .jumpscare-gotcha {
-        font-size: 1.8rem;
-        bottom: 8%;
-      }
-      .jumpscare-close {
-        width: 28px;
-        height: 28px;
-        font-size: 1.4rem;
-        top: 4px;
-        right: 4px;
-      }
     }
-    @media (max-width: 320px) {
+    @media (max-width: 399px) {
       .xp-icons {
-        top: 2px;
-        left: 2px;
-        gap: 6px;
+        top: 4px;
+        left: 4px;
+        gap: 8px;
       }
       .xp-icon {
-        width: 24px;
-        font-size: 6px;
+        width: 32px;
+        font-size: 7px;
       }
       .xp-icon img {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
       }
       .xp-press-here {
-        transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.6);
       }
       .xp-press-here img {
         width: 28px;
@@ -423,17 +397,6 @@ Place these files in the same directory as this HTML:
       .xp-clock {
         font-size: 7px;
         margin-right: 3px;
-      }
-      .jumpscare-gotcha {
-        font-size: 1.5rem;
-        bottom: 6%;
-      }
-      .jumpscare-close {
-        width: 24px;
-        height: 24px;
-        font-size: 1.2rem;
-        top: 3px;
-        right: 3px;
       }
     }
     @media (max-height: 500px) and (orientation: landscape) {
@@ -486,75 +449,145 @@ Place these files in the same directory as this HTML:
     }
     .jumpscare-container {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
       background: #000;
-      z-index: 9999;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      overflow: hidden;
+    }
+    
+    .jumpscare-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+    
+    .jumpscare-gotcha {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ff0000;
+      font-size: 4rem;
+      font-weight: bold;
+      text-shadow: 3px 3px 6px #000;
+      z-index: 2;
+      animation: pulse 0.5s infinite alternate;
+    }
+    
+    .jumpscare-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      cursor: pointer;
+      z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: jumpscare-fadein 0.7s cubic-bezier(.4,2,.6,1) 1;
-      opacity: 1;
-      transition: opacity 0.5s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
-    .jumpscare-container.hide {
-      opacity: 0;
-      pointer-events: none;
+    
+    /* Mobile-specific video adjustments */
+    @media (max-width: 768px) {
+      .jumpscare-video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      .jumpscare-gotcha {
+        font-size: 3rem;
+        bottom: 15%;
+      }
+      
+      .jumpscare-close {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+        top: 15px;
+        right: 15px;
+      }
     }
-    @keyframes jumpscare-fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    
+    @media (max-width: 480px) {
+      .jumpscare-video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      .jumpscare-gotcha {
+        font-size: 2.5rem;
+        bottom: 12%;
+      }
+      
+      .jumpscare-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.8rem;
+        top: 10px;
+        right: 10px;
+      }
     }
-    .jumpscare-video {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: 1;
-      filter: brightness(1.1) contrast(1.2);
-      transition: filter 0.3s;
+    
+    @media (max-width: 320px) {
+      .jumpscare-video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      .jumpscare-gotcha {
+        font-size: 2rem;
+        bottom: 10%;
+      }
+      
+      .jumpscare-close {
+        width: 30px;
+        height: 30px;
+        font-size: 1.5rem;
+        top: 8px;
+        right: 8px;
+      }
     }
-    .jumpscare-close {
-      position: absolute;
-      top: 18px;
-      right: 24px;
-      z-index: 10;
-      background: rgba(0,0,0,0.3);
-      color: #fff;
-      border: none;
-      font-size: 2.5rem;
-      font-weight: bold;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.2s, background 0.2s;
-    }
-    .jumpscare-close:hover, .jumpscare-close:focus {
-      opacity: 1;
-      background: rgba(0,0,0,0.7);
-    }
-    .jumpscare-gotcha {
-      position: absolute;
-      bottom: 12%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ff2222;
-      font-size: 4rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 16px #000, 0 0 32px #fff;
-      opacity: 0.95;
-      z-index: 5;
-      pointer-events: none;
-      animation: gotcha-pop 0.5s cubic-bezier(.4,2,.6,1) 1 2s forwards;
-    }
-    @keyframes gotcha-pop {
-      0% { opacity: 0; transform: translateX(-50%) scale(0.7); }
-      60% { opacity: 1; transform: translateX(-50%) scale(1.2); }
-      100% { opacity: 0.95; transform: translateX(-50%) scale(1); }
+    
+    /* Landscape orientation for phones */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .jumpscare-video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      .jumpscare-gotcha {
+        font-size: 2rem;
+        bottom: 8%;
+      }
+      
+      .jumpscare-close {
+        width: 25px;
+        height: 25px;
+        font-size: 1.2rem;
+        top: 5px;
+        right: 5px;
+      }
     }
     /* Volume Warning Modal */
     .volume-warning {
@@ -703,6 +736,7 @@ Place these files in the same directory as this HTML:
     function getLanguage() {
       const language = navigator.language || navigator.userLanguage;
       const langCode = language.toLowerCase().split('-')[0];
+      console.log('Detected language:', language, 'Code:', langCode);
       
       if (langCode === 'tr') return 'turkish';
       if (langCode === 'ar') return 'arabic';
@@ -711,6 +745,8 @@ Place these files in the same directory as this HTML:
     
     function showVolumeWarning() {
       const language = getLanguage();
+      console.log('Showing volume warning in:', language);
+      
       const warning = document.getElementById('volume-warning');
       const title = warning.querySelector('.volume-warning-title');
       const message = warning.querySelector('.volume-warning-message');
@@ -739,26 +775,31 @@ Place these files in the same directory as this HTML:
       message.textContent = msg.message;
       button.textContent = msg.button;
       
-      // Show warning after a short delay
-      setTimeout(() => {
-        warning.classList.add('show');
-      }, 500);
+      // Show warning immediately
+      warning.classList.add('show');
+      console.log('Volume warning shown');
       
       // Dismiss warning when button is clicked
       button.addEventListener('click', () => {
         warning.classList.remove('show');
+        console.log('Volume warning dismissed');
       });
       
       // Also dismiss when clicking outside
       warning.addEventListener('click', (e) => {
         if (e.target === warning) {
           warning.classList.remove('show');
+          console.log('Volume warning dismissed by outside click');
         }
       });
     }
     
-    // Show volume warning when page loads
-    window.addEventListener('load', showVolumeWarning);
+    // Show volume warning immediately when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', showVolumeWarning);
+    } else {
+      showVolumeWarning();
+    }
 
     // Clock
     function updateClock() {
@@ -813,13 +854,20 @@ Place these files in the same directory as this HTML:
       isJumpscare = true;
       desktop.style.display = 'none';
       jumpscare.style.display = 'flex';
-      jumpscare.classList.remove('hide');
       
       // Mobile-friendly video handling
       jumpscareVideo.currentTime = 0;
       jumpscareVideo.volume = 1;
       jumpscareVideo.muted = false;
       jumpscareVideo.controls = false;
+      jumpscareVideo.playsInline = true;
+      jumpscareVideo.webkitPlaysinline = true;
+      
+      // Ensure video covers full screen
+      jumpscareVideo.style.width = '100vw';
+      jumpscareVideo.style.height = '100vh';
+      jumpscareVideo.style.objectFit = 'cover';
+      jumpscareVideo.style.objectPosition = 'center';
       
       // Try fullscreen, but don't fail if not supported
       try {
@@ -846,17 +894,22 @@ Place these files in the same directory as this HTML:
     }
     function hideJumpscare() {
       isJumpscare = false;
-      jumpscare.classList.add('hide');
-      setTimeout(() => {
-        jumpscare.style.display = 'none';
-        desktop.style.display = '';
-        jumpscareVideo.pause();
-        try {
-          exitFullscreen();
-        } catch (e) {
-          console.log('Fullscreen exit failed');
-        }
-      }, 400);
+      jumpscare.style.display = 'none';
+      desktop.style.display = '';
+      jumpscareVideo.pause();
+      jumpscareVideo.currentTime = 0;
+      
+      // Reset video styles
+      jumpscareVideo.style.width = '';
+      jumpscareVideo.style.height = '';
+      jumpscareVideo.style.objectFit = '';
+      jumpscareVideo.style.objectPosition = '';
+      
+      try {
+        exitFullscreen();
+      } catch (e) {
+        console.log('Fullscreen exit failed');
+      }
     }
     pressHereIcon.addEventListener('click', showJumpscare);
     // Add touch support for mobile
