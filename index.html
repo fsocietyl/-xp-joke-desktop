@@ -392,17 +392,35 @@ Place these files in the same directory as this HTML:
       desktop.style.display = 'none';
       jumpscare.style.display = 'flex';
       jumpscare.classList.remove('hide');
+      
+      // Mobile-friendly video handling
+      jumpscareVideo.currentTime = 0;
+      jumpscareVideo.volume = 1;
+      jumpscareVideo.muted = false;
+      jumpscareVideo.controls = false;
+      
       // Try fullscreen, but don't fail if not supported
       try {
         enterFullscreen(document.documentElement);
       } catch (e) {
         console.log('Fullscreen not supported, continuing without it');
       }
-      jumpscareVideo.currentTime = 0;
-      jumpscareVideo.volume = 1;
-      jumpscareVideo.play().catch(e => {
-        console.log('Video autoplay blocked, user must interact first');
-      });
+      
+      // Play video with better mobile support
+      const playPromise = jumpscareVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log('Video playing successfully');
+        }).catch(error => {
+          console.log('Video autoplay blocked on mobile, showing static jumpscare:', error);
+          // For mobile browsers that block autoplay, show a static jumpscare
+          jumpscareVideo.style.display = 'none';
+          // Make the GOTCHA text more prominent for mobile
+          document.querySelector('.jumpscare-gotcha').style.fontSize = '3rem';
+          document.querySelector('.jumpscare-gotcha').style.animation = 'none';
+          document.querySelector('.jumpscare-gotcha').style.opacity = '1';
+        });
+      }
     }
     function hideJumpscare() {
       isJumpscare = false;
