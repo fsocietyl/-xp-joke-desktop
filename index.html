@@ -140,60 +140,163 @@ Place these files in the same directory as this HTML:
       margin-right: 24px;
       text-shadow: 1px 1px 2px #000;
     }
+    @media (max-width: 1200px) {
+      .xp-icons {
+        top: 20px;
+        left: 20px;
+        gap: 24px;
+      }
+      .xp-icon {
+        width: 60px;
+        font-size: 12px;
+      }
+      .xp-icon img {
+        width: 40px;
+        height: 40px;
+      }
+      .xp-press-here img {
+        width: 64px;
+        height: 64px;
+      }
+      .xp-press-here-label {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 900px) {
+      .xp-icons {
+        top: 16px;
+        left: 16px;
+        gap: 20px;
+      }
+      .xp-icon {
+        width: 52px;
+        font-size: 11px;
+      }
+      .xp-icon img {
+        width: 36px;
+        height: 36px;
+      }
+      .xp-press-here img {
+        width: 56px;
+        height: 56px;
+      }
+      .xp-press-here-label {
+        font-size: 14px;
+      }
+      .xp-taskbar {
+        height: 40px;
+      }
+      .xp-taskbar-photo {
+        width: 32px;
+        height: 32px;
+        margin-left: 12px;
+      }
+      .xp-clock {
+        font-size: 14px;
+        margin-right: 16px;
+      }
+    }
+    @media (max-width: 768px) {
+      .xp-icons {
+        top: 12px;
+        left: 12px;
+        gap: 16px;
+      }
+      .xp-icon {
+        width: 44px;
+        font-size: 10px;
+      }
+      .xp-icon img {
+        width: 32px;
+        height: 32px;
+      }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+      .xp-press-here img {
+        width: 48px;
+        height: 48px;
+      }
+      .xp-press-here-label {
+        font-size: 13px;
+      }
+      .xp-taskbar {
+        height: 36px;
+      }
+      .xp-taskbar-photo {
+        width: 28px;
+        height: 28px;
+        margin-left: 10px;
+      }
+      .xp-clock {
+        font-size: 12px;
+        margin-right: 12px;
+      }
+      .jumpscare-gotcha {
+        font-size: 3rem;
+        bottom: 15%;
+      }
+      .jumpscare-close {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+        top: 10px;
+        right: 10px;
+      }
+    }
     @media (max-width: 600px) {
       .xp-icons {
         top: 8px;
-        left: 4px;
+        left: 6px;
         gap: 12px;
       }
       .xp-icon {
-        width: 40px;
-        font-size: 10px;
+        width: 36px;
+        font-size: 9px;
       }
       .xp-icon img {
         width: 28px;
         height: 28px;
       }
       .xp-press-here {
-        padding: 0;
         transform: translate(-50%, -50%) scale(0.8);
       }
       .xp-press-here img {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
       }
       .xp-press-here-label {
-        font-size: 12px;
+        font-size: 11px;
       }
       .xp-taskbar {
-        height: 28px;
+        height: 32px;
       }
       .xp-taskbar-photo {
-        width: 20px;
-        height: 20px;
-        margin-left: 6px;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
       }
       .xp-clock {
         font-size: 10px;
-        margin-right: 6px;
+        margin-right: 8px;
       }
       .jumpscare-gotcha {
         font-size: 2.5rem;
-        bottom: 10%;
+        bottom: 12%;
       }
       .jumpscare-close {
         width: 36px;
         height: 36px;
         font-size: 1.8rem;
-        top: 6px;
-        right: 6px;
+        top: 8px;
+        right: 8px;
       }
     }
-    @media (max-width: 400px) {
+    @media (max-width: 480px) {
       .xp-icons {
-        top: 4px;
-        left: 2px;
-        gap: 8px;
+        top: 6px;
+        left: 4px;
+        gap: 10px;
       }
       .xp-icon {
         width: 32px;
@@ -207,11 +310,59 @@ Place these files in the same directory as this HTML:
         transform: translate(-50%, -50%) scale(0.7);
       }
       .xp-press-here img {
+        width: 36px;
+        height: 36px;
+      }
+      .xp-press-here-label {
+        font-size: 10px;
+      }
+      .xp-taskbar {
+        height: 28px;
+      }
+      .xp-taskbar-photo {
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+      }
+      .xp-clock {
+        font-size: 9px;
+        margin-right: 6px;
+      }
+      .jumpscare-gotcha {
+        font-size: 2.2rem;
+        bottom: 10%;
+      }
+      .jumpscare-close {
+        width: 32px;
+        height: 32px;
+        font-size: 1.6rem;
+        top: 6px;
+        right: 6px;
+      }
+    }
+    @media (max-width: 400px) {
+      .xp-icons {
+        top: 4px;
+        left: 3px;
+        gap: 8px;
+      }
+      .xp-icon {
+        width: 28px;
+        font-size: 7px;
+      }
+      .xp-icon img {
+        width: 20px;
+        height: 20px;
+      }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.6);
+      }
+      .xp-press-here img {
         width: 32px;
         height: 32px;
       }
       .xp-press-here-label {
-        font-size: 10px;
+        font-size: 9px;
       }
       .xp-taskbar {
         height: 24px;
@@ -226,7 +377,7 @@ Place these files in the same directory as this HTML:
         margin-right: 4px;
       }
       .jumpscare-gotcha {
-        font-size: 2rem;
+        font-size: 1.8rem;
         bottom: 8%;
       }
       .jumpscare-close {
@@ -235,6 +386,102 @@ Place these files in the same directory as this HTML:
         font-size: 1.4rem;
         top: 4px;
         right: 4px;
+      }
+    }
+    @media (max-width: 320px) {
+      .xp-icons {
+        top: 2px;
+        left: 2px;
+        gap: 6px;
+      }
+      .xp-icon {
+        width: 24px;
+        font-size: 6px;
+      }
+      .xp-icon img {
+        width: 18px;
+        height: 18px;
+      }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+      .xp-press-here img {
+        width: 28px;
+        height: 28px;
+      }
+      .xp-press-here-label {
+        font-size: 8px;
+      }
+      .xp-taskbar {
+        height: 20px;
+      }
+      .xp-taskbar-photo {
+        width: 14px;
+        height: 14px;
+        margin-left: 3px;
+      }
+      .xp-clock {
+        font-size: 7px;
+        margin-right: 3px;
+      }
+      .jumpscare-gotcha {
+        font-size: 1.5rem;
+        bottom: 6%;
+      }
+      .jumpscare-close {
+        width: 24px;
+        height: 24px;
+        font-size: 1.2rem;
+        top: 3px;
+        right: 3px;
+      }
+    }
+    @media (max-height: 500px) and (orientation: landscape) {
+      .xp-icons {
+        top: 2px;
+        left: 4px;
+        gap: 6px;
+      }
+      .xp-icon {
+        width: 20px;
+        font-size: 6px;
+      }
+      .xp-icon img {
+        width: 16px;
+        height: 16px;
+      }
+      .xp-press-here {
+        transform: translate(-50%, -50%) scale(0.4);
+      }
+      .xp-press-here img {
+        width: 24px;
+        height: 24px;
+      }
+      .xp-press-here-label {
+        font-size: 7px;
+      }
+      .xp-taskbar {
+        height: 18px;
+      }
+      .xp-taskbar-photo {
+        width: 12px;
+        height: 12px;
+        margin-left: 3px;
+      }
+      .xp-clock {
+        font-size: 6px;
+        margin-right: 3px;
+      }
+      .jumpscare-gotcha {
+        font-size: 1.2rem;
+        bottom: 5%;
+      }
+      .jumpscare-close {
+        width: 20px;
+        height: 20px;
+        font-size: 1rem;
+        top: 2px;
+        right: 2px;
       }
     }
     .jumpscare-container {
@@ -309,6 +556,113 @@ Place these files in the same directory as this HTML:
       60% { opacity: 1; transform: translateX(-50%) scale(1.2); }
       100% { opacity: 0.95; transform: translateX(-50%) scale(1); }
     }
+    /* Volume Warning Modal */
+    .volume-warning {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .volume-warning.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .volume-warning-content {
+      background: linear-gradient(135deg, #2b579a 0%, #1e3a8a 100%);
+      border: 3px solid #4a90e2;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      max-width: 400px;
+      margin: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    
+    .volume-warning-title {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .volume-warning-message {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .volume-warning-button {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .volume-warning-button:hover {
+      background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .volume-warning-button:active {
+      transform: translateY(0);
+    }
+    
+    /* Responsive volume warning */
+    @media (max-width: 768px) {
+      .volume-warning-content {
+        padding: 25px;
+        max-width: 350px;
+      }
+      .volume-warning-title {
+        font-size: 20px;
+      }
+      .volume-warning-message {
+        font-size: 14px;
+      }
+      .volume-warning-button {
+        padding: 10px 25px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .volume-warning-content {
+        padding: 20px;
+        max-width: 300px;
+      }
+      .volume-warning-title {
+        font-size: 18px;
+      }
+      .volume-warning-message {
+        font-size: 13px;
+      }
+      .volume-warning-button {
+        padding: 8px 20px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -337,7 +691,75 @@ Place these files in the same directory as this HTML:
     <div class="jumpscare-gotcha">GOTCHA!</div>
   </div>
   <audio id="xp-click" src="sounds/xp-click.mp3" preload="auto"></audio>
+  <div class="volume-warning" id="volume-warning">
+    <div class="volume-warning-content">
+      <h2 class="volume-warning-title">Volume Warning</h2>
+      <p class="volume-warning-message">This site uses audio. Please adjust your volume.</p>
+      <button class="volume-warning-button">OK</button>
+    </div>
+  </div>
   <script>
+    // Language detection and volume warning
+    function getLanguage() {
+      const language = navigator.language || navigator.userLanguage;
+      const langCode = language.toLowerCase().split('-')[0];
+      
+      if (langCode === 'tr') return 'turkish';
+      if (langCode === 'ar') return 'arabic';
+      return 'english';
+    }
+    
+    function showVolumeWarning() {
+      const language = getLanguage();
+      const warning = document.getElementById('volume-warning');
+      const title = warning.querySelector('.volume-warning-title');
+      const message = warning.querySelector('.volume-warning-message');
+      const button = warning.querySelector('.volume-warning-button');
+      
+      const messages = {
+        turkish: {
+          title: 'Ses Uyarısı',
+          message: 'Bu site ses kullanır. Lütfen ses seviyenizi ayarlayın.',
+          button: 'Tamam'
+        },
+        arabic: {
+          title: 'تحذير الصوت',
+          message: 'هذا الموقع يستخدم الصوت. يرجى ضبط مستوى الصوت.',
+          button: 'حسناً'
+        },
+        english: {
+          title: 'Volume Warning',
+          message: 'This site uses audio. Please adjust your volume.',
+          button: 'OK'
+        }
+      };
+      
+      const msg = messages[language];
+      title.textContent = msg.title;
+      message.textContent = msg.message;
+      button.textContent = msg.button;
+      
+      // Show warning after a short delay
+      setTimeout(() => {
+        warning.classList.add('show');
+      }, 500);
+      
+      // Dismiss warning when button is clicked
+      button.addEventListener('click', () => {
+        warning.classList.remove('show');
+      });
+      
+      // Also dismiss when clicking outside
+      warning.addEventListener('click', (e) => {
+        if (e.target === warning) {
+          warning.classList.remove('show');
+        }
+      });
+    }
+    
+    // Show volume warning when page loads
+    window.addEventListener('load', showVolumeWarning);
+
     // Clock
     function updateClock() {
       const el = document.getElementById('xp-clock');
